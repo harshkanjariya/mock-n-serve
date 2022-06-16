@@ -53,8 +53,8 @@ app.get('/set-cookie', (req: e.Request, res: e.Response) => {
     }, res);
 });
 app.use('*', (req: e.Request, res: e.Response) => {
+    req.fileInfo = {};
     if ('files' in req) {
-        req.fileInfo = {};
         Object.keys(req['files']).forEach((fileKey) => {
             const file = req['files'][fileKey];
             if (req.fileInfo) {
