@@ -21,7 +21,7 @@ app.set('view engine', 'ejs');
 type CookieData = {
     name: string;
     value: string;
-    options: CookieOptions;
+    options: CookieOptions | any;
 }
 
 function setCookie(data: CookieData, res: e.Response) {
@@ -49,7 +49,7 @@ app.get('/set-cookie', (req: e.Request, res: e.Response) => {
     setCookie({
         name,
         value,
-        options,
+        options
     }, res);
 });
 app.use('*', (req: e.Request, res: e.Response) => {
@@ -81,6 +81,6 @@ app.use('*', (req: e.Request, res: e.Response) => {
     }
 });
 
-app.listen(process.env.PORT, () => {
-    console.log('mock-n-serve is listening to port ' + process.env.PORT);
+app.listen(process.env.PORT || 3000, () => {
+    console.log('mock-n-serve is listening to port ' + (process.env.PORT || 3000));
 });
