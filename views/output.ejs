@@ -6,50 +6,59 @@
             border: 0.5px solid #a0a0a0;
             border-spacing: 0;
         }
+
         td {
             border: 0.5px solid #a0a0a0;
             padding: 5px;
         }
+
         td:first-of-type {
             vertical-align: top;
         }
     </style>
 </head>
 <body>
-<pre>
-<%=JSON.stringify(locals, null, 4)%>>
-</pre>
-    <table>
-        <tbody>
-        <tr>
-            <td>Method</td>
-            <td><%=method%></td>
-        </tr>
-        <tr>
-            <td>URL</td>
-            <td><%=url%></td>
-        </tr>
-        <tr>
-            <td>Body</td>
-            <td><pre><%=JSON.stringify(body, null, 4)%></pre></td>
-        </tr>
-        <tr>
-            <td>Query</td>
-            <td><pre><%=JSON.stringify(query, null, 4)%></pre></td>
-        </tr>
-        <tr>
-            <td>Headers</td>
-            <td><pre><%=JSON.stringify(headers, null, 4)%></pre></td>
-        </tr>
-        <tr>
-            <td>Cookies</td>
-            <td><pre><%=JSON.stringify(cookies, null, 4)%></pre></td>
-        </tr>
-        <tr>
-            <td>Files</td>
-            <td><pre><%=JSON.stringify(files, null, 4)%></pre></td>
-        </tr>
-        </tbody>
-    </table>
+<table>
+    <tbody>
+    <tr>
+        <td>Method</td>
+        <td><%= method %></td>
+    </tr>
+    <tr>
+        <td>URL</td>
+        <td><%= url %></td>
+    </tr>
+    <tr>
+        <td>Body</td>
+        <td>
+            <pre><%= JSON.stringify(body, null, 4) %></pre>
+        </td>
+    </tr>
+    <tr>
+        <td>Query</td>
+        <td>
+            <pre><%= JSON.stringify(query, null, 4) %></pre>
+        </td>
+    </tr>
+    <tr>
+        <td>Headers</td>
+        <td>
+            <pre><%= JSON.stringify(headers, null, 4) %></pre>
+        </td>
+    </tr>
+    <tr>
+        <td>Cookies</td>
+        <td>
+            <pre><%= JSON.stringify(cookies, null, 4) %></pre>
+        </td>
+    </tr>
+    <tr>
+        <td>Files</td>
+        <td>
+            <pre><%= typeof files === "undefined" ? {} : JSON.stringify(files, null, 4) %></pre>
+        </td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
