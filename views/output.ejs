@@ -1,9 +1,21 @@
 <html lang="en-US">
 <head>
     <title>Mock-N-Serve</title>
+    <style>
+        table {
+            border: 0.5px solid #a0a0a0;
+        }
+        td {
+            border: 0.5px solid #a0a0a0;
+            padding: 5px;
+        }
+        td:first-of-type {
+            vertical-align: top;
+        }
+    </style>
 </head>
 <body>
-    <table>
+    <table cellspacing="0">
         <tbody>
         <tr>
             <td>Method</td>
@@ -11,7 +23,7 @@
         </tr>
         <tr>
             <td>URL</td>
-            <td><%=originalUrl%></td>
+            <td><%=url%></td>
         </tr>
         <tr>
             <td>Body</td>
@@ -22,8 +34,8 @@
             <td><pre><%=JSON.stringify(query, null, 4)%></pre></td>
         </tr>
         <tr>
-            <td>Params</td>
-            <td><pre><%=JSON.stringify(params, null, 4)%></pre></td>
+            <td>Headers</td>
+            <td><pre><%=JSON.stringify(headers, null, 4)%></pre></td>
         </tr>
         <tr>
             <td>Cookies</td>
@@ -31,7 +43,7 @@
         </tr>
         <tr>
             <td>Files</td>
-            <td><pre><%=JSON.stringify(fileInfo, null, 4)%></pre></td>
+            <td><pre><%=JSON.stringify(files, null, 4)%></pre></td>
         </tr>
         </tbody>
     </table>
