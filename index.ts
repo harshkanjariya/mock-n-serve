@@ -78,7 +78,7 @@ app.use('*', (req: e.Request, res: e.Response) => {
         query: req.query,
         headers: req.headers,
         cookies: req.cookies,
-        files: req['fileInfo'],
+        files: req['fileInfo'] || {},
     }
     if (req.headers['response-type'] === 'application/json'
       || req.headers['responseType'] === 'application/json') {
