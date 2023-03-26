@@ -10,6 +10,7 @@
             overflow: scroll;
             border: 0.5px solid #a0a0a0;
         }
+
         table {
             width: 100%;
             border-spacing: 0;
@@ -23,6 +24,7 @@
         td:first-of-type {
             vertical-align: top;
         }
+
         td:last-of-type {
             flex: 1;
         }
@@ -31,14 +33,13 @@
             position: fixed;
             right: 0;
             top: 0;
-            filter: invert();
         }
     </style>
 </head>
 <body>
 <a href="https://github.com/harshkanjariya/mock-n-serve">
     <img alt="github"
-         src="https://raw.githubusercontent.com/tholman/github-corners/master/svg/github-corner-right.svg"
+         src="<%= assetBasePath %>/github.svg"
          class="github"
          width="70"
          height="70"
